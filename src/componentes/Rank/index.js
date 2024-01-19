@@ -1,4 +1,4 @@
-import Colaborador from '../Colaborador'
+import Anime from '../Anime'
 import './Rank.css'
 
 const Rank = (props) => {
@@ -8,8 +8,8 @@ const Rank = (props) => {
 
     props.colaboradores.length > 0 ? <section className='rank' style={css}> 
       <h3 style={{borderColor: props.corPrimaria}} > {props.nome}</h3>
-      <div className='colaboradores'>
-        {props.colaboradores.map(colaborador => <Colaborador corDeFundo={props.corPrimaria} key={colaborador.nome}  nome={colaborador.nome} estilo={colaborador.estilo} imagem={colaborador.imagem}/>)}
+      <div className='animes'>
+        {props.colaboradores.map(anime => <Anime corDeFundo={props.corPrimaria} key={anime.nome}  nome={anime.nome} genero={anime.genero} imagem={anime.imagem}/>)}
       </div>   
     </section>
     : ''

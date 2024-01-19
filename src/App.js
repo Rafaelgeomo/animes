@@ -8,8 +8,8 @@ function App() {
   const ranks = [
     {
       nome:'Gostei', 
-      corPrimaria:'#57C278',
-      corSecundaria:'#D9F7E9'
+      corPrimaria:'#30db65',
+      corSecundaria:'#cbf5e6'
     },
     {
       nome:'Fraco',

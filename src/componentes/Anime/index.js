@@ -1,7 +1,7 @@
-import './Colaborador.css'
+import './Anime.css'
 
-const Colaborador = ({nome, imagem, estilo, corDeFundo}) => {
-  return (<div className='colaborador'>
+const Anime = ({nome, imagem, estilo, corDeFundo}) => {
+  return (<div className='anime'>
       <div className='cabecalho' style={{backgroundColor: corDeFundo}}>
         <img src={imagem} alt={nome} />
       </div>
@@ -15,4 +15,4 @@ const Colaborador = ({nome, imagem, estilo, corDeFundo}) => {
   )
 }
 
-export default Colaborador
+export default Anime

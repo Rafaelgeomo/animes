@@ -8,7 +8,7 @@ const Formulario = (props)=> {
 
  
   const [nome, setNome] = useState ('')
-  const [estilo, setEstilo] = useState ('')
+  const [genero, setGenero] = useState ('')
   const [imagem, setImagem] = useState ('')
   const [rank, setRank] = useState ('')
 
@@ -17,12 +17,12 @@ const Formulario = (props)=> {
     evento.preventDefault()
     props.aoColaboradorCadastrado({
       nome,
-      estilo,
+      genero,
       imagem,
       rank
     })
     setNome('')
-    setEstilo('')
+    setGenero('')
     setImagem('')
     setRank('')
   }
@@ -33,17 +33,17 @@ const Formulario = (props)=> {
         <h2>Preencha os dados para criar o card do Anime</h2>
       <CampoTexto 
       obrigatorio={true} 
-      label="Nome" 
-      placeholder="Digite o nome do Anime" 
+      label="Anime" 
+      placeholder="Digite o anime" 
       valor={nome} 
       aoAlterado={valor => setNome(valor)}
       />
       <CampoTexto 
       obrigatorio={true} 
-      label="Estilo" 
-      placeholder="Digite o estilo"
-      valor={estilo} 
-      aoAlterado={valor => setEstilo(valor)}
+      label="Genero" 
+      placeholder="Digite o gênero"
+      valor={genero} 
+      aoAlterado={valor => setGenero(valor)}
       />
       <CampoTexto 
       label="Imagem" 

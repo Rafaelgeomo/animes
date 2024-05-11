@@ -1,9 +1,8 @@
-.banner {
-  background-color: #5A2B63;
+.cabecalho {
+  background-color: #5a2b63;
   text-align: center;
-
 }
 
-.banner img {
+.cabecalho img {
   max-width: 100%;
 }

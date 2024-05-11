@@ -1,67 +1,173 @@
-import { useState } from 'react';
-import Banner from './componentes/Banner';
-import Formulario from './componentes/Formulario';
-import Rank from './componentes/Rank';
+import { useState } from "react";
+import Banner from "./componentes/Banner";
+import Formulario from "./componentes/Formulario";
+import Rodape from "./componentes/Rodape";
+import Rank from "./componentes/Rank";
+import { v4 as uuidv4 } from "uuid";
 
 function App() {
+  const [ranks, setRanks] = useState([
+    {
+      id: uuidv4(),
+      nome: "Gostei",
+      cor: "#57C278",
+    },
+    {
+      id: uuidv4(),
+      nome: "Fraco",
+      cor: "#82CFFA",
+    },
+    {
+      id: uuidv4(),
+      nome: "Colocar na lista",
+      cor: "#A6D157",
+    },
+    {
+      id: uuidv4(),
+      nome: "Assistir novamente",
+      cor: "#E06B69",
+    },
+    {
+      id: uuidv4(),
+      nome: "Inesquecível",
+      cor: "#DB6EBF",
+    },
+    {
+      id: uuidv4(),
+      nome: "Vou dar uma chance",
+      cor: "#FFBA05",
+    },
+  ]);
 
-  const ranks = [
+  const inicial = [
     {
-      nome:'Gostei', 
-      corPrimaria:'#30db65',
-      corSecundaria:'#cbf5e6'
+      id: uuidv4(),
+      favorito: false,
+      nome: "Naruto",
+      genero: "Aventura",
+      imagem:
+        "https://f.i.uol.com.br/fotografia/2021/02/18/1613671086602eaaae9c32f_1613671086_3x2_md.jpg",
+      rank: ranks[0].nome,
     },
     {
-      nome:'Fraco',
-      corPrimaria:'#82CFFA',
-      corSecundaria:'#E8F8FF'
+      id: uuidv4(),
+      favorito: false,
+      nome: "Fullmetal Alchemist",
+      genero: "Ação",
+      imagem:
+        "https://f.i.uol.com.br/fotografia/2021/02/18/1613671086602eaaae9c32f_1613671086_3x2_md.jpg",
+      rank: ranks[0].nome,
     },
     {
-      nome:'Colocar na Lista',
-      corPrimaria:'#A6D157',
-      corSecundaria:'#F0F8E2'
+      id: uuidv4(),
+      favorito: false,
+      nome: "Hunter x Hunter",
+      genero: "Ação",
+      imagem:
+        "	https://wallpapercrafter.com/desktop1/664454-Anime-Hunter-x-Hunter-Gon-Freecss-1080P.jpg",
+      rank: ranks[0].nome,
     },
     {
-      nome:'Assistir Novamente',
-      corPrimaria:'#E06B69',
-      corSecundaria:'#FDE7E8'
+      id: uuidv4(),
+      favorito: false,
+      nome: "Dragon Ball Z",
+      genero: "Artes Marciais",
+      imagem:
+        "https://sm.ign.com/ign_br/news/n/new-dragon/new-dragon-ball-series-dragon-ball-daima-confirmed-for-fall_t343.jpg",
+      rank: ranks[0].nome,
     },
     {
-      nome:'Favoritos',
-      corPrimaria:'#DB6EBF',
-      corSecundaria:'#FAE9F5'
+      id: uuidv4(),
+      favorito: false,
+      nome: "Naruto",
+      genero: "Aventura",
+      imagem:
+        "https://f.i.uol.com.br/fotografia/2021/02/18/1613671086602eaaae9c32f_1613671086_3x2_md.jpg",
+      rank: ranks[1].nome,
     },
     {
-      nome:'Vou dar uma chance',
-      corPrimaria:'#FFBA05',
-      corSecundaria:'#FFF5D9'
+      id: uuidv4(),
+      favorito: false,
+      nome: "Fullmetal Alchemist",
+      genero: "Ação",
+      imagem:
+        "https://kanto.legiaodosherois.com.br/w760-h398-cfill/wp-content/uploads/2022/06/legiao_QlSkH2d9AxIR.jpg",
+      rank: ranks[1].nome,
     },
-  ]
+    {
+      id: uuidv4(),
+      favorito: false,
+      nome: "Hunter x Hunter",
+      genero: "Ação",
+      imagem:
+        "	https://wallpapercrafter.com/desktop1/664454-Anime-Hunter-x-Hunter-Gon-Freecss-1080P.jpg",
+      rank: ranks[1].nome,
+    },
+    {
+      id: uuidv4(),
+      favorito: false,
+      nome: "Dragon Ball Z",
+      genero: "Artes Marciais",
+      imagem:
+        "https://sm.ign.com/ign_br/news/n/new-dragon/new-dragon-ball-series-dragon-ball-daima-confirmed-for-fall_t343.jpg",
+      rank: ranks[1].nome,
+    },
+  ];
 
-  const [colaboradores, setColaboradores] =useState([])
+  const [animes, setAnimes] = useState(inicial);
 
-  const aoNovoColaboradorAdicionado = (colaborador)=> {
-    //debugger - degubar um codigo linha por linha
-    setColaboradores([...colaboradores,colaborador])
+  function aoDeletarAnime(id) {
+    setAnimes(animes.filter((anime) => anime.id !== id));
+  }
+
+  function mudarCorDoRank(cor, id) {
+    setRanks(
+      ranks.map((rank) => {
+        if (rank.id === id) {
+          rank.cor = cor;
+        }
+        return rank;
+      })
+    );
+  }
+
+  function cadastrarRank(novoRank) {
+    setRanks([...ranks, { ...novoRank, id: uuidv4() }]);
+  }
+
+  function resolverFavorito(id) {
+    setAnimes(
+      animes.map((anime) => {
+        if (anime.id === id) anime.favorito = !anime.favorito;
+        return anime;
+      })
+    );
   }
 
   return (
-    <div className="App">
+    <div>
       <Banner />
-      <Formulario 
-      ranks={ranks.map(rank => rank.nome)} 
-      aoColaboradorCadastrado={colaborador => 
-      aoNovoColaboradorAdicionado(colaborador)} 
-      />      
-      
-      {ranks.map(rank => <Rank
-      key={rank.nome} 
-      nome={rank.nome} 
-      corPrimaria={rank.corPrimaria} 
-      corSecundaria={rank.corSecundaria}
-      colaboradores={colaboradores.filter(colaborador => colaborador.rank === rank.nome)}      
-      /> )}   
-      
+      <Formulario
+        cadastrarRank={cadastrarRank}
+        ranks={ranks.map((rank) => rank.nome)}
+        aoCadastrar={(anime) => setAnimes([...animes, anime])}
+      />
+      <section className="ranks">
+        <h1>Meus Animes</h1>
+        {ranks.map((rank, indice) => (
+          <Rank
+            aoFavoritar={resolverFavorito}
+            mudarCor={mudarCorDoRank}
+            key={indice}
+            rank={rank}
+            animes={animes.filter(
+              (anime) => anime.rank === rank.nome
+            )}
+            aoDeletar={aoDeletarAnime}
+          />
+        ))}
+      </section>
+      <Rodape />
     </div>
   );
 }

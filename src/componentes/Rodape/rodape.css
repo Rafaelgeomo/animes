@@ -1,5 +1,5 @@
 .footer {
-  background: #6278f7;
+  background: #16001f;
   color: #fff;
   display: flex;
   justify-content: space-between;
@@ -13,6 +13,10 @@
 
 .footer ul li:last-child {
   margin-right: 0;
+}
+
+.footer p {
+  margin-right: 32px;
 }
 
 .logoRafa img {

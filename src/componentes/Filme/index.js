@@ -4,11 +4,11 @@ import {
   AiOutlineHeart,
 } from "react-icons/ai";
 
-import "./Anime.css";
+import "./Filme.css";
 
-const Anime = ({ anime, corDeFundo, aoDeletar, aoFavoritar }) => {
+const Filme = ({ filme, corDeFundo, aoDeletar, aoFavoritar }) => {
   function favoritar() {
-    aoFavoritar(anime.id);
+    aoFavoritar(filme.id);
   }
 
   const propsFavorito = {
@@ -17,23 +17,24 @@ const Anime = ({ anime, corDeFundo, aoDeletar, aoFavoritar }) => {
   };
 
   return (
-    <div className="anime">
+    <div className="filme">
       <AiFillCloseCircle
         size={25}
         className="deletar"
-        onClick={() => aoDeletar(anime.id)}
+        onClick={() => aoDeletar(filme.id)}
       />
       <div
         className="cabecalho"
         style={{ backgroundColor: corDeFundo }}
       >
-        <img src={anime.imagem} alt={anime.nome} />
+        <img src={filme.imagem} alt={filme.nome} />
       </div>
       <div className="rodape">
-        <h4>{anime.nome}</h4>
-        <h5>{anime.genero}</h5>
+        <h4>{filme.nome}</h4>
+        <h5>{filme.categoria}</h5>
+        <h5>{filme.genero}</h5>
         <div className="favoritar">
-          {anime.favorito ? (
+          {filme.favorito ? (
             <AiFillHeart {...propsFavorito} color="#ff0000" />
           ) : (
             <AiOutlineHeart {...propsFavorito} />
@@ -44,4 +45,4 @@ const Anime = ({ anime, corDeFundo, aoDeletar, aoFavoritar }) => {
   );
 };
 
-export default Anime;
+export default Filme;

@@ -5,7 +5,7 @@ const Banner = () => {
   return (
     <header className="cabecalho">
       <img
-        src="/imagens/banner.jpg"
+        src="/imagens/banner1.jpg"
         alt="O banner principal da página de filmes"
       />
     </header>

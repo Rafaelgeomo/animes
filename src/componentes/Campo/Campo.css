@@ -1,11 +1,11 @@
 .campo {
-  margin: 24px 0;
+  margin: 12px 0;
 }
 
 .campo label {
   display: block;
   margin-bottom: 8px;
-  font-size: 24px;
+  font-size: 18px;
 }
 
 .campo input {
@@ -14,8 +14,8 @@
   border-radius: 0px;
   width: 100%;
   border: none;
-  font-size: 24px;
-  padding: 24px;
+  font-size: 18px;
+  padding: 15px;
   box-sizing: border-box;
 }
 

@@ -3,7 +3,7 @@
   gap: 20px;
   flex-wrap: wrap; /* faz com que quebre a linha caso a tela seja muito pequena */
   justify-content: center;
-  margin: 80px 50px;
+  margin: 35px 25px;
 }
 .formulario-container .formulario {
   background: #f7f7f7;
@@ -14,7 +14,7 @@
 }
 .formulario-container .formulario h2 {
   font-weight: 400;
-  font-size: 32px;
+  font-size: 25px;
 }
 
 .logo-container {

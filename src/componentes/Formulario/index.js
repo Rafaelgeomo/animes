@@ -9,6 +9,7 @@ import { v4 as uuidv4 } from "uuid";
 const Formulario = ({
   aoCadastrar,
   avaliacoes,
+  onPesquisa,
   // cadastrarAvaliacao,
 }) => {
   const [nome, setNome] = useState("");
@@ -16,6 +17,14 @@ const Formulario = ({
   const [categoria, setCategoria] = useState("");
   const [imagem, setImagem] = useState("");
   const [avaliacao, setAvaliacao] = useState("");
+  const [termoDePesquisa, setTermoDePesquisa] = useState(""); // Novo estado para o termo de pesquisa
+
+  const handlePesquisa = (e) => {
+    if (onPesquisa) {
+      setTermoDePesquisa(e.target.value); // Atualiza o estado do termo de pesquisa
+      onPesquisa(e.target.value);
+    }
+  };
 
   const aoSubmeter = (evento) => {
     evento.preventDefault();
@@ -49,14 +58,14 @@ const Formulario = ({
         <Campo
           obrigatorio={true}
           label="Genero"
-          placeholder="Digite o gênero"
+          placeholder="Ação, Comédia, Ficção..."
           valor={genero}
           aoAlterado={(valor) => setGenero(valor)}
         />
         <Campo
           obrigatorio={true}
           label="Categoria"
-          placeholder="Digite a categoria"
+          placeholder="Filme, Série, Animação..."
           valor={categoria}
           aoAlterado={(valor) => setCategoria(valor)}
         />
@@ -75,7 +84,12 @@ const Formulario = ({
         <Botao texto="Criar Card" />
       </form>
       <div className="logo-container">
-        <input type="text" placeholder="Pesquisar..." />
+        <input
+          type="text"
+          placeholder="Pesquisar..."
+          value={termoDePesquisa} // Controla o valor do input
+          onChange={handlePesquisa} // Chama handlePesquisa ao digitar
+        />
         <HiMagnifyingGlass className="pesquisar" />
       </div>
     </section>

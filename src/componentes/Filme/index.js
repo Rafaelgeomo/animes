@@ -31,8 +31,8 @@ const Filme = ({ filme, corDeFundo, aoDeletar, aoFavoritar }) => {
       </div>
       <div className="rodape">
         <h4>{filme.nome}</h4>
-        <h5>{filme.categoria}</h5>
         <h5>{filme.genero}</h5>
+        <h5>{filme.categoria}</h5>
         <div className="favoritar">
           {filme.favorito ? (
             <AiFillHeart {...propsFavorito} color="#ff0000" />

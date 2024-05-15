@@ -44,11 +44,5 @@
   top: 12px;
   left: 193px;
   font-size: 27px;
-  cursor: pointer;
   color: #4d026a;
-}
-
-.logo-container,
-.pesquisar:hover {
-  color: #d475ee;
 }

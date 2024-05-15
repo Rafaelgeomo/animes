@@ -1,6 +1,6 @@
 .filme {
   position: relative;
-  width: 280px;
+  width: 230px;
 }
 
 .filme .cabecalho {
@@ -12,28 +12,30 @@
   height: 180px;
   border-radius: 15%;
   position: relative;
-  bottom: -20px;
+  bottom: -30px;
 }
 
 .filme .rodape {
   background: #ffffff;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.08);
   border-radius: 0px 0px 10px 10px;
-  padding-top: 5px;
-  padding-bottom: 20px;
+  padding-top: 45px;
+  padding-bottom: 10px;
 }
 
 .filme .rodape h4 {
   color: #6278f7;
   font-size: 18px;
+  line-height: 22px;
   font-weight: bold;
   margin-bottom: 8px;
 }
 
 .filme .rodape h5 {
   font-size: 18px;
-  line-height: 1px;
+  line-height: 25px;
   color: #212121;
+  font-weight: 500;
   padding: 0 16px;
 }
 

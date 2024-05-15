@@ -1,6 +1,6 @@
 .avaliacao {
   text-align: center;
-  padding: 10px;
+  padding: 32px;
   background-blend-mode: multiply;
   position: relative;
 }
@@ -16,6 +16,7 @@
 .avaliacao .filmes {
   display: flex;
   justify-content: space-around;
+  margin-top: 25px;
   flex-wrap: wrap;
 }
 

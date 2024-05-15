@@ -19,6 +19,26 @@ const Formulario = ({
   const [avaliacao, setAvaliacao] = useState("");
   const [termoDePesquisa, setTermoDePesquisa] = useState(""); // Novo estado para o termo de pesquisa
 
+  // const categorias = [
+  //   {
+  //     id: 0,
+  //     nome: "Filmes",
+  //   },
+  //   {
+  //     id: 1,
+  //     nome: "Séries",
+  //   },
+  //   {
+  //     id: 2,
+  //     nome: "Animação",
+  //     cor: "",
+  //   },
+  //   {
+  //     id: 3,
+  //     nome: "Documentário",
+  //   },
+  // ];
+
   const handlePesquisa = (e) => {
     if (onPesquisa) {
       setTermoDePesquisa(e.target.value); // Atualiza o estado do termo de pesquisa
@@ -65,7 +85,7 @@ const Formulario = ({
         <Campo
           obrigatorio={true}
           label="Categoria"
-          placeholder="Filme, Série, Animação..."
+          placeholder="Filme, Série, Animações..."
           valor={categoria}
           aoAlterado={(valor) => setCategoria(valor)}
         />

@@ -14,7 +14,8 @@
 }
 .formulario-container .formulario h2 {
   font-weight: 400;
-  font-size: 25px;
+  font-size: 35px;
+  text-align: center;
 }
 
 .logo-container {
@@ -41,7 +42,7 @@
 .logo-container .pesquisar {
   position: absolute;
   top: 12px;
-  left: 196px;
+  left: 193px;
   font-size: 27px;
   cursor: pointer;
   color: #4d026a;

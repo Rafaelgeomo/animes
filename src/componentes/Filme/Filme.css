@@ -8,8 +8,9 @@
   border-radius: 10px 10px 0px 0px;
 }
 .filme img {
-  width: 160px;
-  border-radius: 25%;
+  width: 200px;
+  height: 180px;
+  border-radius: 15%;
   position: relative;
   bottom: -20px;
 }

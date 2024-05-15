@@ -16,11 +16,11 @@ const Rodape = () => {
           </li>
           <li>
             <a
-              href="https://twitter.com/jeronymo_rafael"
+              href="https://github.com/Rafaelgeomo"
               target="_blank"
               rel="noreferrer"
             >
-              <img src="/imagens/twitter.png" alt="" />
+              <img src="/imagens/github.png" alt="" />
             </a>
           </li>
           <li>

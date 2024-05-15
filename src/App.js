@@ -21,7 +21,7 @@ function App() {
           },
           {
             id: uuidv4(),
-            nome: "Fraco",
+            nome: "Inesquecível",
             cor: "",
           },
           {
@@ -36,12 +36,12 @@ function App() {
           },
           {
             id: uuidv4(),
-            nome: "Inesquecível",
+            nome: "Vou dar uma chance",
             cor: "",
           },
           {
             id: uuidv4(),
-            nome: "Vou dar uma chance",
+            nome: "Fraco",
             cor: "",
           },
         ];
